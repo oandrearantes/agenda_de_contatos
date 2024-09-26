@@ -165,6 +165,15 @@ function renderizarContatos() {
     });
 }
 
+// Função para alternar para a tabela de contatos
+function mostrarTabelaContatos() {
+    pesquisaNome.value = ""; 
+    tabelaPesquisa.classList.add("hidden"); 
+    tabelaContatos.classList.remove("hidden"); 
+    tabelaEmergencia.classList.add("hidden");
+    tabelaUtilidade.classList.add("hidden");
+}
+
 // Função para cadastrar um contato
 cadastroForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -190,6 +199,9 @@ cadastroForm.addEventListener("submit", function(event) {
     contatos.push({ nome, telefone: telefoneFormatado });
     renderizarContatos();
     
+    // Chama a função para mostrar a tabela de contatos
+    mostrarTabelaContatos();
+
     // Limpa os campos de cadastro
     cadastroForm.reset();
 });
@@ -265,7 +277,6 @@ pesquisaNome.addEventListener("input", function() {
 // Funções para alternar as tabelas
 btnAgenda.addEventListener("click", function() {
     pesquisaNome.value = "";  // Limpa o campo de pesquisa
-    tabelaPesquisa.classList.add("hidden");  // Esconde a tabela de pesquisa
     tabelaContatos.classList.remove("hidden");
     tabelaEmergencia.classList.add("hidden");
     tabelaUtilidade.classList.add("hidden");
@@ -274,7 +285,6 @@ btnAgenda.addEventListener("click", function() {
 
 btnServicosEmergencia.addEventListener("click", function() {
     pesquisaNome.value = "";  // Limpa o campo de pesquisa
-    tabelaPesquisa.classList.add("hidden");  // Esconde a tabela de pesquisa
     tabelaEmergencia.classList.remove("hidden");
     tabelaContatos.classList.add("hidden");
     tabelaUtilidade.classList.add("hidden");
@@ -283,7 +293,6 @@ btnServicosEmergencia.addEventListener("click", function() {
 
 btnServicosUtilidade.addEventListener("click", function() {
     pesquisaNome.value = "";  // Limpa o campo de pesquisa
-    tabelaPesquisa.classList.add("hidden");  // Esconde a tabela de pesquisa
     tabelaUtilidade.classList.remove("hidden");
     tabelaContatos.classList.add("hidden");
     tabelaEmergencia.classList.add("hidden");
