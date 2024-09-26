@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Contatos</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agenda de Contatos</h1>
+        </header>
+        
+        <form id="cadastro">
+            <input type="text" id="cadastro-contato" placeholder="Nome do Contato" required>
+            <input type="text" id="cadastro-telefone" placeholder="Número do Contato" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <div class="pesquisas">
+            <div class="pesquisa-container">
+                <input type="text" id="pesquisa-nome" placeholder="Pesquisar contato...">
+            </div>
+    
+            <div class="buttons-container">
+                <button id="btn-agenda">Agenda Pessoal</button>
+                <button id="btn-servicos-emergencia">Emergência</button>
+                <button id="btn-servicos-utilidade">Utilidade Pública</button>
+            </div>
+        </div>
+
+        <table id="tabela-contatos" class="hidden">
+            <thead>
+                <tr>
+                    <th>Contato</th>
+                    <th>Número do Contato</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-contatos">
+                <!-- Contatos cadastrados serão exibidos aqui -->
+            </tbody>
+        </table>
+
+        <table id="tabela-emergencia" class="hidden">
+            <thead>
+                <tr>
+                    <th>Serviços de Emergência</th>
+                    <th>Número do Contato</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-emergencia">
+                <!-- Contatos de serviços de emergência serão gerados pelo JavaScript -->
+            </tbody>
+        </table>
+
+        <table id="tabela-utilidade" class="hidden">
+            <thead>
+                <tr>
+                    <th>Serviços de Utilidade Pública</th>
+                    <th>Número do Contato</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-utilidade">
+                <!-- Contatos de serviços de utilidade serão gerados pelo JavaScript -->
+            </tbody>
+        </table>
+
+        <table id="tabela-pesquisa" class="hidden">
+            <thead>
+                <tr>
+                    <th>Contato</th>
+                    <th>Número do Contato</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-pesquisa">
+                <!-- Contatos encontrados na pesquisa serão exibidos aqui -->
+            </tbody>
+        </table>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
